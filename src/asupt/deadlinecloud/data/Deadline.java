@@ -67,12 +67,32 @@ public class Deadline
 	{
 		return priority;
 	}
+	
+	public int getWebPriority()
+	{
+		if (priority.equals(Priorirty.HIGH))
+			return 3;
+		else if (priority.equals(Priorirty.MEDIUM))
+			return 2;
+		else
+			return 1;
+	}
 
 	public void setPriority(Priorirty priority)
 	{
 		this.priority = priority;
 	}
-
+	
+	public void setWebPriority(int p)
+	{
+		if (p == 3)
+			this.priority = Priorirty.HIGH;
+		else if (p == 2)
+			this.priority = Priorirty.MEDIUM;
+		else
+			this.priority = Priorirty.LOW;
+	}
+	
 	public String getGroupName()
 	{
 		return groupName;
@@ -86,6 +106,11 @@ public class Deadline
 	public Calendar getCalendar()
 	{
 		return this.calendar;
+	}
+	
+	public void setCalendar(Calendar c)
+	{
+		this.calendar = c;
 	}
 	
 public void setDate(int year, int month, int day)
